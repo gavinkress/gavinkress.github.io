@@ -1,3 +1,4 @@
-#theme: jekyll-theme-minimal
-#title: GavinKress.org web hosting management
-#description: Github pages hosting with jekyll deployment
+title: "Gavin Kress"
+description: "Github pages hosting of gavinkress.org domain webpages"
+url: "https://www.gavinkress.org"
+baseurl: ""
