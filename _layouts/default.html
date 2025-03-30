@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ site.description }}" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <!-- Bootstrap Icons for social/media icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+</head>
+<body>
+  <header>
+    <!-- Site title with neon flicker effect -->
+    <h1 class="neon-flicker">{{ site.title }}</h1>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <p class="footer-text">© 2025 {{ site.title }}</p>
+    <p>
+      <!-- Social icon (GitHub) -->
+      <a href="https://github.com/gavinkress" class="icon-link" target="_blank" rel="noopener">
+        <i class="bi bi-github"></i>
+      </a>
+    </p>
+  </footer>
+
+  <!-- Loading overlay with typewriter text and progress bar -->
+  <div id="overlay">
+    <h1 id="intro-title">Loading {{ site.title }}'s Portfolio...</h1>
+    <div id="progress"><div id="progress-bar"></div></div>
+  </div>
+
+  <!-- Markdown parser library -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Main interaction script -->
+  <script>
+    // Fetch GitHub README markdown and convert to HTML
+    fetch("https://raw.githubusercontent.com/gavinkress/gavinkress/main/README.md")
+      .then(response => response.text())
+      .then(markdown => {
+        const container = document.getElementById('readme-content');
+        container.innerHTML = marked(markdown);  // parse MD to HTML
+
+        // Wrap each top-level section (H2) in a collapsible container
+        const headings = container.querySelectorAll('h2');
+        headings.forEach(h2 => {
+          const titleText = h2.textContent.trim();
+          if (titleText === '---' || titleText.includes('|')) {
+            return; // skip table/formatted headings that are not actual sections
+          }
+          // Create section wrapper
+          const section = document.createElement('div');
+          section.className = 'category section collapsible collapsed';
+          h2.parentNode.insertBefore(section, h2);
+          h2.classList.add('category-title');
+          section.appendChild(h2);
+          // Move all following siblings until the next H2 into the section content
+          const content = document.createElement('div');
+          content.className = 'category-content';
+          let sibling = h2.nextSibling;
+          while (sibling && !(sibling.tagName && sibling.tagName.toLowerCase() === 'h2')) {
+            const next = sibling.nextSibling;
+            content.appendChild(sibling);
+            sibling = next;
+          }
+          section.appendChild(content);
+        });
+
+        // Add click event to toggle collapsible sections
+        document.querySelectorAll('.category-title').forEach(title => {
+          title.addEventListener('click', () => {
+            title.parentElement.classList.toggle('collapsed');
+          });
+        });
+
+        // Improve performance: lazy-load images (e.g., badges) 
+        container.querySelectorAll('img').forEach(img => {
+          img.setAttribute('loading', 'lazy');
+        });
+
+        // Scroll reveal: fade-in sections on scroll
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.section').forEach(sec => observer.observe(sec));
+      })
+      .catch(err => {
+        console.error("Failed to load README content:", err);
+        document.getElementById('readme-content').innerText = "⚠️ Error loading content.";
+      });
+
+    // Hide the loading overlay after initial animations complete
+    setTimeout(() => {
+      document.getElementById('overlay').style.display = 'none';
+    }, 3500);
+
+    // Neon glow mouse trail effect
+    document.addEventListener('mousemove', e => {
+      const trail = document.createElement('div');
+      trail.className = 'mouse-trail';
+      trail.style.left = e.pageX + 'px';
+      trail.style.top = e.pageY + 'px';
+      document.body.appendChild(trail);
+      setTimeout(() => trail.remove(), 1000);
+    });
+  </script>
+</body>
+</html>
