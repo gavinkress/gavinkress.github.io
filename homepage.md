@@ -1,6 +1,6 @@
 layout: page
 title: "GavinKress"
-permalink: /
+permalink www.gavinkress.org
 
 <!--
 Landing Page for GavinKress.org
