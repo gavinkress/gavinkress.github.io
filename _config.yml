@@ -1,4 +1,5 @@
 title: "Gavin Kress"
-description: "Github pages hosting of gavinkress.org domain webpages"
+theme: nil  # no default theme
+plugins: [] # no Jekyll plugins
 url: "https://www.gavinkress.org"
 baseurl: ""
