@@ -1,15 +1,3 @@
-layout: page
-title: "GavinKress"
-permalink www.gavinkress.org
-
-<!--
-Landing Page for GavinKress.org
-Author: Gavin Kress
-Email: me@gavinkress.org
-Date: 2025-03-29
-License: MIT
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
