@@ -95,7 +95,7 @@
 
   <section>
     <div class="terminal typewriter">
-      <span>> So, why are you here <span class="highlight">Neural Hub</span>...<br>> ... ...? ...<br>> Status: <span class="highlight">Github.com/gavinkress</span></span>
+      <span>> So, why are you here...? <span class="highlight">--------</span>...<br>> ... ...? ...<br>> Status: <span class="highlight">Github.com/gavinkress</span></span>
     </div>
 
     <h2>README Sync</h2>
