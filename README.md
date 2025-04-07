@@ -89,14 +89,13 @@
 </head>
 <body>
   <header>
-    <img src="/assets/brain-implant.png" alt="Brain Implant Logo" class="logo" />
     <h1>Gavin Kress</h1>
-    <p>Neurosymbiotic Dev | Med Student | MechE MS | 🧠🚀</p>
+    <p>Personal Domain and namespace for Identity verification, independent networking and hosting, and cybersecurity solutions...</p>
   </header>
 
   <section>
     <div class="terminal typewriter">
-      <span>> Initializing uplink to <span class="highlight">Neural Hub</span>...<br>> Loading protocols: medicine, AI, security, systems design...<br>> Status: <span class="highlight">Connected</span></span>
+      <span>> So, why are you here <span class="highlight">Neural Hub</span>...<br>> ... ...? ...<br>> Status: <span class="highlight">Github.com/gavinkress</span></span>
     </div>
 
     <h2>README Sync</h2>
@@ -118,7 +117,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Gavin Kress — Synapse Secure, Mindfully Engineered 🧠
+    &copy; Gavin Kress — Medical Student/Engineer
   </footer>
 
   <script>
