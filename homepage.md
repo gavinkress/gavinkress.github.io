@@ -10,7 +10,7 @@ Date: 2025-03-29
 License: MIT
 -->
 
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -101,14 +101,13 @@ License: MIT
 </head>
 <body>
   <header>
-    <img src="/assets/brain-implant.png" alt="Brain Implant Logo" class="logo" />
     <h1>Gavin Kress</h1>
-    <p>Neurosymbiotic Dev | Med Student | MechE MS | 🧠🚀</p>
+    <p>Personal Domain and namespace for Identity verification, independent networking and hosting, and cybersecurity solutions...</p>
   </header>
 
   <section>
     <div class="terminal typewriter">
-      <span>> Initializing uplink to <span class="highlight">Neural Hub</span>...<br>> Loading protocols: medicine, AI, security, systems design...<br>> Status: <span class="highlight">Connected</span></span>
+      <span>> So, why are you here...? <span class="highlight">--------</span>...<br>> ... ...? ...<br>> Status: <span class="highlight">Github.com/gavinkress</span></span>
     </div>
 
     <h2>README Sync</h2>
@@ -130,7 +129,7 @@ License: MIT
   </section>
 
   <footer>
-    &copy; 2025 Gavin Kress — Synapse Secure, Mindfully Engineered 🧠
+    &copy; Gavin Kress — Medical Student/Engineer
   </footer>
 
   <script>
